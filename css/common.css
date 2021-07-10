@@ -1,0 +1,242 @@
+@font-face {
+  font-family: mymonospace;
+  src: url(Hermit-Regular.otf);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: url(back.png) repeat fixed #070708;
+  color: #ddd;
+  min-height: 100%;
+}
+
+.link {
+  width: 2px;
+  height: 10em;
+  background: #5e6061;
+  margin: auto;
+  overflow: hidden;
+}
+
+.center {
+  margin: auto;
+}
+  
+@keyframes data {
+  0% { padding-top: 0em; }
+  66% { padding-top: 10em; }
+  100% { padding-top: 10em; }
+}
+
+.data {
+  animation-name: data;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  width: 100%;
+  height: 1em;
+}
+
+.data div {
+  width: 100%;
+  height: 1em;
+  background: #999;
+}
+
+.card-holder {
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  @keyframes width-appear {
+    from { width: 2px; }
+    to { width: 100%; }
+  }
+  .card-holder {
+    animation-name: width-appear;
+    animation-duration: 0.7s;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 600px;
+  }
+  #main-card {
+    width: 800px;
+  }
+}
+
+.card {
+  font-family: mymonospace, monospace, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Symbol";
+  max-width: 600px;
+  /*border: 2px solid #0070aa;*/
+  background-color: #11131add;
+}
+
+#main-card {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 5em;
+}
+
+.card h1 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0.5em;
+  background: #21232add;
+  color: #ee7700;
+}
+
+#main-card h1::before {
+  content: "▣ ";
+  color: #ee7700;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #0070aa;
+}
+
+.image-holder {
+  display: flex;
+  align-items: center;
+}
+
+.card .para {
+  padding: 0.5em;
+}
+
+#main-card .image-holder {
+  padding: 0.5em;
+}
+
+.image-holder:nth-child(2) {
+  flex: 1;
+}
+
+.image-holder img {
+  width: 64px;
+}
+
+span.head {
+  color: #ee7700;
+}
+
+.column-holder {
+  display: flex;
+}
+
+.column-holder > div:not(.icon-column) {
+  flex: 1;
+}
+
+.icon-column {
+  width: 48px;
+}
+
+.icon-column img {
+  width: 32px;
+  height: 32px;
+  padding-right: 8px;
+}
+
+.icon-column ul {
+  padding: 0;
+}
+
+.icon-column li {
+  width: 32px;  
+  height: 32px;
+  padding: 8px;
+  overflow: hidden;
+  background: #21232add;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.icon-column li a {
+  display: flex;
+  flex-flow: row no-wrap;
+}
+
+.icon-column li span {
+  display: block;
+  height: 32px;
+  line-height: 36px;
+}
+
+.icon-column li:hover {
+  width: 200px;
+}
+
+.reveal {
+  display: none;
+}
+
+.reveal:checked + * {
+  display: block;
+}
+
+.reveal + * {
+  display: none;
+}
+
+.reveal-box label {
+  cursor: pointer;
+  color: #0a0;
+}
+
+.card-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: -1em;
+}
+
+.card-list .card-list-container {
+  width: 600px;
+  margin: 1em;
+}
+
+/* launches */
+
+.suborbital .card h1 {
+  background: #213f23;
+}
+
+.human .card h1 {
+  background: #626;
+}
+
+.satellite .card h1 {
+  background: #21233f;
+}
+
+.station .card h1 {
+  background: #852;
+}
+
+.outer .card h1 {
+  background: #733;
+}
+
+.human.station .card h1 {
+  background: repeating-linear-gradient( 45deg, #852, #852 20px, #626 20px, #626 40px );
+}
+
+.human.suborbital .card h1 {
+  background: repeating-linear-gradient( 45deg, #213f23, #213f23 20px, #626 20px, #626 40px );
+}
